@@ -12,14 +12,23 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		180E68B5081C4B498C61C79D /* Eczar-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4D19AFDCEAA41F6B1017867 /* Eczar-ExtraBold.ttf */; };
+		23F14CB5CA784E358B2B9BAE /* Eczar-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9816A28E339043149AAEB64B /* Eczar-Medium.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TeachassistYRDSBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TeachassistYRDSBTests.m */; };
 		3BE0B7CD0FE6CE135D6F785E /* libPods-TeachassistYRDSB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 270C6878880E85C3E2685761 /* libPods-TeachassistYRDSB.a */; };
+		3DA8E3EADD2844C293A19D5A /* Eczar-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C6160964B7F4F97AF9D972F /* Eczar-Regular.ttf */; };
+		4D99FA3161A9471DB8719B29 /* Eczar-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA6FF51A4EC547B5AB02DD30 /* Eczar-SemiBold.ttf */; };
 		77BA55AABD008A20C93C54E3 /* libPods-TeachassistYRDSB-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139C723CFAD3EB631A67F59A /* libPods-TeachassistYRDSB-tvOSTests.a */; };
+		78B5F1B88E66484F9A58C0C1 /* Eczar-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF7815715E724EC0B2BD4FBA /* Eczar-Bold.ttf */; };
+		7B78C9EB46A24AE2A7516113 /* Gilroy-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 996999734F67454E95664E25 /* Gilroy-ExtraBold.ttf */; };
 		8985F0EF2A0DF5B32B0D1899 /* libPods-TeachassistYRDSB-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F25FF266E3A054578E9802B4 /* libPods-TeachassistYRDSB-tvOS.a */; };
+		8A496B5F88C94B538F0FE7F0 /* Gilroy-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C21B151327F644EA81D5B364 /* Gilroy-Regular.otf */; };
+		9C30DE2584AC4C62BE983AF6 /* Gilroy-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28C0AA8270FA492881487CE2 /* Gilroy-Bold.otf */; };
 		9F5686DE94E4FB30A798B264 /* libPods-TeachassistYRDSBTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 522DB7B236D1F0CC9059701B /* libPods-TeachassistYRDSBTests.a */; };
+		CD1040992F8241A2B710F710 /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D3DFF1C720B4D6D9EB2EE0A /* Gilroy-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,17 +61,26 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TeachassistYRDSB/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TeachassistYRDSB/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TeachassistYRDSB/main.m; sourceTree = "<group>"; };
+		1C6160964B7F4F97AF9D972F /* Eczar-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Eczar-Regular.ttf"; path = "../assets/fonts/Eczar-Regular.ttf"; sourceTree = "<group>"; };
+		1D3DFF1C720B4D6D9EB2EE0A /* Gilroy-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Light.ttf"; path = "../assets/fonts/Gilroy-Light.ttf"; sourceTree = "<group>"; };
 		270C6878880E85C3E2685761 /* libPods-TeachassistYRDSB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeachassistYRDSB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		271254300356B37871840ACE /* Pods-TeachassistYRDSBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachassistYRDSBTests.release.xcconfig"; path = "Target Support Files/Pods-TeachassistYRDSBTests/Pods-TeachassistYRDSBTests.release.xcconfig"; sourceTree = "<group>"; };
+		28C0AA8270FA492881487CE2 /* Gilroy-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Bold.otf"; path = "../assets/fonts/Gilroy-Bold.otf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* TeachassistYRDSB-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeachassistYRDSB-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* TeachassistYRDSB-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TeachassistYRDSB-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40AAE6EDD46FBE10C01964B9 /* Pods-TeachassistYRDSB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachassistYRDSB.debug.xcconfig"; path = "Target Support Files/Pods-TeachassistYRDSB/Pods-TeachassistYRDSB.debug.xcconfig"; sourceTree = "<group>"; };
 		522DB7B236D1F0CC9059701B /* libPods-TeachassistYRDSBTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TeachassistYRDSBTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFA55FC4F20AE17887190C6 /* Pods-TeachassistYRDSB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachassistYRDSB.release.xcconfig"; path = "Target Support Files/Pods-TeachassistYRDSB/Pods-TeachassistYRDSB.release.xcconfig"; sourceTree = "<group>"; };
+		9816A28E339043149AAEB64B /* Eczar-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Eczar-Medium.ttf"; path = "../assets/fonts/Eczar-Medium.ttf"; sourceTree = "<group>"; };
+		996999734F67454E95664E25 /* Gilroy-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-ExtraBold.ttf"; path = "../assets/fonts/Gilroy-ExtraBold.ttf"; sourceTree = "<group>"; };
 		998F09A37672D26CFF7794BF /* Pods-TeachassistYRDSB-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachassistYRDSB-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-TeachassistYRDSB-tvOSTests/Pods-TeachassistYRDSB-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D326AE3FF282055C99770D4 /* Pods-TeachassistYRDSB-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachassistYRDSB-tvOS.release.xcconfig"; path = "Target Support Files/Pods-TeachassistYRDSB-tvOS/Pods-TeachassistYRDSB-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		A3B775C0A47CABDD8B93409B /* Pods-TeachassistYRDSB-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachassistYRDSB-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-TeachassistYRDSB-tvOS/Pods-TeachassistYRDSB-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A4D19AFDCEAA41F6B1017867 /* Eczar-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Eczar-ExtraBold.ttf"; path = "../assets/fonts/Eczar-ExtraBold.ttf"; sourceTree = "<group>"; };
 		A51FE47E5510E8604BC5D73F /* Pods-TeachassistYRDSBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachassistYRDSBTests.debug.xcconfig"; path = "Target Support Files/Pods-TeachassistYRDSBTests/Pods-TeachassistYRDSBTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF7815715E724EC0B2BD4FBA /* Eczar-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Eczar-Bold.ttf"; path = "../assets/fonts/Eczar-Bold.ttf"; sourceTree = "<group>"; };
+		BA6FF51A4EC547B5AB02DD30 /* Eczar-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Eczar-SemiBold.ttf"; path = "../assets/fonts/Eczar-SemiBold.ttf"; sourceTree = "<group>"; };
+		C21B151327F644EA81D5B364 /* Gilroy-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Regular.otf"; path = "../assets/fonts/Gilroy-Regular.otf"; sourceTree = "<group>"; };
 		CC213B7C66FCD216651F0801 /* Pods-TeachassistYRDSB-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachassistYRDSB-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-TeachassistYRDSB-tvOSTests/Pods-TeachassistYRDSB-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -161,7 +179,6 @@
 				A51FE47E5510E8604BC5D73F /* Pods-TeachassistYRDSBTests.debug.xcconfig */,
 				271254300356B37871840ACE /* Pods-TeachassistYRDSBTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -181,6 +198,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				3136979D714C7254A32BE6C5 /* Pods */,
+				A7DCEB34C4C347F4AC3EF92D /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -196,6 +214,22 @@
 				2D02E4901E0B4A5D006451C7 /* TeachassistYRDSB-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A7DCEB34C4C347F4AC3EF92D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				996999734F67454E95664E25 /* Gilroy-ExtraBold.ttf */,
+				1D3DFF1C720B4D6D9EB2EE0A /* Gilroy-Light.ttf */,
+				AF7815715E724EC0B2BD4FBA /* Eczar-Bold.ttf */,
+				A4D19AFDCEAA41F6B1017867 /* Eczar-ExtraBold.ttf */,
+				9816A28E339043149AAEB64B /* Eczar-Medium.ttf */,
+				1C6160964B7F4F97AF9D972F /* Eczar-Regular.ttf */,
+				BA6FF51A4EC547B5AB02DD30 /* Eczar-SemiBold.ttf */,
+				28C0AA8270FA492881487CE2 /* Gilroy-Bold.otf */,
+				C21B151327F644EA81D5B364 /* Gilroy-Regular.otf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +319,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -308,6 +342,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -338,6 +373,15 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				7B78C9EB46A24AE2A7516113 /* Gilroy-ExtraBold.ttf in Resources */,
+				CD1040992F8241A2B710F710 /* Gilroy-Light.ttf in Resources */,
+				78B5F1B88E66484F9A58C0C1 /* Eczar-Bold.ttf in Resources */,
+				180E68B5081C4B498C61C79D /* Eczar-ExtraBold.ttf in Resources */,
+				23F14CB5CA784E358B2B9BAE /* Eczar-Medium.ttf in Resources */,
+				3DA8E3EADD2844C293A19D5A /* Eczar-Regular.ttf in Resources */,
+				4D99FA3161A9471DB8719B29 /* Eczar-SemiBold.ttf in Resources */,
+				9C30DE2584AC4C62BE983AF6 /* Gilroy-Bold.otf in Resources */,
+				8A496B5F88C94B538F0FE7F0 /* Gilroy-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
