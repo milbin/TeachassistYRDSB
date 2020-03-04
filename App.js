@@ -13,8 +13,8 @@ export default function App() {
         <Stack.Screen
           name="LoginPage"
           component={LoginPage}
-          options={{title: 'Login       '}}
-        />
+          options={{headerShown: false}}
+      />
       </Stack.Navigator>
     </NavigationContainer>
   );
