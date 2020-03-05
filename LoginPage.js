@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
 import {styles, Theme, elements} from './Styles';
 import talogo from './assets/images/talogo.png';
+import {Icon} from 'react-native-elements';
 
 export default class LoginPage extends Component {
   constructor(props) {
@@ -13,7 +14,11 @@ export default class LoginPage extends Component {
   render() {
     return (
       <View
-        style={{flex: 1, alignItems: 'center', backgroundColor: Theme.dark()}}>
+        style={{
+          flex: 100,
+          alignItems: 'center',
+          backgroundColor: Theme.dark(),
+        }}>
         {/* login page */}
         <View style={{alignItems: 'center', marginTop: 75}}>
           {/* logo and title */}
@@ -24,35 +29,56 @@ export default class LoginPage extends Component {
         </View>
         <View style={{marginTop: 100}}>
           {/* credentials */}
-          <TextInput
-            style={[
-              elements.button,
-              {
-                width: 250,
-                height: 40,
-                paddingLeft: 10,
-                backgroundColor: Theme.mid(),
-              },
-            ]}
-            placeholder="Username"
-            leftIcon={{type: 'font-awesome', name: 'chevron-left'}}
-          />
-          {/* username */}
-          <TextInput
-            style={[
-              elements.button,
-              {
-                width: 250,
-                height: 40,
-                marginTop: 10,
-                paddingLeft: 10,
-                backgroundColor: Theme.mid(),
-              },
-            ]}
-            placeholder="Password"
-            secureTextEntry={true}
-          />
-          {/* password */}
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            {/* username */}
+            <Icon name="person-outline" color={Theme.light()} />
+            {/* username icon */}
+            <TextInput
+              style={[
+                elements.button,
+                {
+                  width: 250,
+                  height: 35,
+                  paddingLeft: 10,
+                  marginLeft: 10,
+                  marginRight: 25,
+                  backgroundColor: Theme.mid(),
+                },
+              ]}
+              placeholder="Username"
+            />
+            {/* username field */}
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: 15,
+            }}>
+            {/* password */}
+            <Icon name="lock-outline" color={Theme.light()} />
+            {/* password icon */}
+            <TextInput
+              style={[
+                elements.button,
+                {
+                  width: 250,
+                  height: 35,
+                  paddingLeft: 10,
+                  marginLeft: 10,
+                  marginRight: 25,
+                  backgroundColor: Theme.mid(),
+                },
+              ]}
+              placeholder="Password"
+              secureTextEntry={true}
+            />
+            {/* password field */}
+          </View>
           <TextInput
             style={[
               elements.button,
@@ -66,7 +92,7 @@ export default class LoginPage extends Component {
           style={[
             elements.button,
             {
-              width: 250,
+              width: 200,
               height: 50,
               marginTop: 100,
               justifyContent: 'center',
