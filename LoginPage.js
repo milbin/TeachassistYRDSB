@@ -28,7 +28,7 @@ export default class LoginPage extends Component {
           <Text style={styles.title}>Teachassist</Text>
           {/* title */}
         </View>
-        <View style={{marginTop: 100}}>
+        <View style={{marginTop: 120}}>
           {/* credentials */}
           <View
             style={{
@@ -80,7 +80,28 @@ export default class LoginPage extends Component {
             />
             {/* password field */}
           </View>
-          {/* remember me */}
+          <TouchableOpacity
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: 15,
+              marginLeft: 30,
+            }}
+            activeOpacity={1}
+            onPress={() => {
+              this.state = true;
+            }}>
+            {/* remember me */}
+            {this.state ? (
+              <Icon name="check-box" color={Theme.punk()} />
+            ) : (
+              <Icon name="check-box-outline-blank" color={Theme.punk()} />
+            )}
+            <Text style={[styles.subheading2, {paddingLeft: 5}]}>
+              {/* remember me text */}
+              Remember me
+            </Text>
+          </TouchableOpacity>
         </View>
         <TouchableOpacity
           style={[
@@ -88,7 +109,7 @@ export default class LoginPage extends Component {
             {
               width: 200,
               height: 50,
-              marginTop: 100,
+              marginTop: 150,
               justifyContent: 'center',
               alignItems: 'center',
               backgroundColor: Theme.green(),
@@ -101,17 +122,6 @@ export default class LoginPage extends Component {
             {/* login text */}
             Login
           </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            this.state = true;
-          }}>
-          {/* remember button */}
-          {this.state ? (
-            <Icon name="check-box" />
-          ) : (
-            <Icon name="check-box-outline-blank" />
-          )}
         </TouchableOpacity>
       </View>
     );
