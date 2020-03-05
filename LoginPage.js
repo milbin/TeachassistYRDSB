@@ -9,7 +9,9 @@ export default class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.navigation = props.navigation;
-    this.state = false;
+    this.state = {
+      rememberMe: {value: false, checkBox: 'check-box-outline-blank'},
+    };
   }
 
   render() {
@@ -89,14 +91,21 @@ export default class LoginPage extends Component {
             }}
             activeOpacity={1}
             onPress={() => {
-              this.state = true;
+              if (this.state.rememberMe.value) {
+                this.setState({
+                  rememberMe: {
+                    value: false,
+                    checkBox: 'check-box-outline-blank',
+                  },
+                });
+              } else {
+                this.setState({
+                  rememberMe: {value: true, checkBox: 'check-box'},
+                });
+              }
             }}>
             {/* remember me */}
-            {this.state ? (
-              <Icon name="check-box" color={Theme.punk()} />
-            ) : (
-              <Icon name="check-box-outline-blank" color={Theme.punk()} />
-            )}
+            <Icon name={this.state.rememberMe.checkBox} color={Theme.punk()} />
             <Text style={[styles.subheading2, {paddingLeft: 5}]}>
               {/* remember me text */}
               Remember me
