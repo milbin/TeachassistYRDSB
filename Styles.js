@@ -1,4 +1,5 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
+import React from 'react';
 
 export const colors = {
   darkBlack: '#27272f',
@@ -88,5 +89,5 @@ export const elements = StyleSheet.create({
   button: {
     borderRadius: 10,
     borderWidth: 0,
-  }
+  },
 });

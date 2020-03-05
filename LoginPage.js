@@ -1,14 +1,15 @@
 import 'react-native-gesture-handler';
 import React, {Component} from 'react';
 import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
+import {Icon} from 'react-native-elements';
 import {styles, Theme, elements} from './Styles';
 import talogo from './assets/images/talogo.png';
-import {Icon} from 'react-native-elements';
 
 export default class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.navigation = props.navigation;
+    this.rememberMe = false;
   }
 
   render() {
@@ -79,13 +80,6 @@ export default class LoginPage extends Component {
             />
             {/* password field */}
           </View>
-          <TextInput
-            style={[
-              elements.button,
-              {width: 250, marginTop: 10, backgroundColor: Theme.mid()},
-            ]}
-            placeholder="Remember Me"
-          />
           {/* remember me */}
         </View>
         <TouchableOpacity
@@ -100,13 +94,24 @@ export default class LoginPage extends Component {
               backgroundColor: Theme.green(),
             },
           ]}
-          activeOpacity={0.75}>
+          activeOpacity={0.25}>
           {/* login button */}
           <Text
             style={[styles.subheading1, {fontSize: 25, color: Theme.dark()}]}>
             {/* login text */}
             Login
           </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            this.rememberMe = true;
+          }}>
+          {this.rememberMe ? (
+            <Icon name="check-box-outline-blank" />
+          ) : (
+            <Icon name="check-box" />
+          )}
+          >
         </TouchableOpacity>
       </View>
     );
