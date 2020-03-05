@@ -52,9 +52,6 @@ export class Theme {
 }
 
 export const styles = StyleSheet.create({
-  headerText: {
-    flex: 1,
-  },
   title: {
     fontFamily: 'Eczar-Bold',
     fontSize: 20,
@@ -85,4 +82,11 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     color: Theme.light(),
   },
+});
+
+export const elements = StyleSheet.create({
+  button: {
+    borderRadius: 10,
+    borderWidth: 0,
+  }
 });
