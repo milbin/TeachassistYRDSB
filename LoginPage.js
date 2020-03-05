@@ -9,7 +9,7 @@ export default class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.navigation = props.navigation;
-    this.state = {value: false};
+    this.state = false;
   }
 
   render() {
@@ -104,14 +104,14 @@ export default class LoginPage extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            this.state = {value: true};
+            this.state = true;
           }}>
+          {/* remember button */}
           {this.state ? (
-            <Icon name="check-box-outline-blank" />
-          ) : (
             <Icon name="check-box" />
+          ) : (
+            <Icon name="check-box-outline-blank" />
           )}
-          >
         </TouchableOpacity>
       </View>
     );
