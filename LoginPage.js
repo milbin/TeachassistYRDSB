@@ -11,6 +11,8 @@ export default class LoginPage extends Component {
     this.navigation = props.navigation;
     this.state = {
       rememberMe: {value: false, checkBox: 'check-box-outline-blank'},
+      username: '',
+      password: '',
     };
   }
 
@@ -53,6 +55,8 @@ export default class LoginPage extends Component {
                 },
               ]}
               placeholder="Username"
+              onChangeText={username => this.setState({username})} // not sure if we need this line?
+              value={this.state.username}
             />
             {/* username field */}
           </View>
@@ -79,6 +83,8 @@ export default class LoginPage extends Component {
               ]}
               placeholder="Password"
               secureTextEntry={true}
+              onChangeText={password => this.setState({password})} // not sure if we need this line?
+              value={this.state.password}
             />
             {/* password field */}
           </View>
@@ -124,7 +130,11 @@ export default class LoginPage extends Component {
               backgroundColor: Theme.green(),
             },
           ]}
-          activeOpacity={0.25}>
+          activeOpacity={0.25}
+          onPress={() => {
+            console.log(this.state.username);
+            console.log(this.state.password);
+          }}>
           {/* login button */}
           <Text
             style={[styles.subheading1, {fontSize: 25, color: Theme.dark()}]}>
