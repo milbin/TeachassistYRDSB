@@ -1,58 +1,37 @@
 var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-var FormData = require('form-data');
 
-/*
-const sendRequest = new XMLHttpRequest();
-const url = 'https://ta.yrdsb.ca/live/index.php';
-sendRequest.open('POST', url, false);
+function sendRequest(data) {
+  console.log('sending request');
 
-var formData = new FormData();
-formData.append('subject_id', '0');
-formData.append('username', 'USE');
-formData.append('password', 'PAS');
-formData.append('submit', 'Login');
+  const xhr = new XMLHttpRequest();
 
-sendRequest.send(formData);
+  let urlEncodedData = '',
+    urlEncodedDataPairs = [],
+    name;
 
-sendRequest.onreadystatechange = e => {
-  console.log(sendRequest.responseText);
-};
+  // Turn the data object into an array of URL-encoded key/value pairs.
+  for (name in data) {
+    urlEncodedDataPairs.push(
+      encodeURIComponent(name) + '=' + encodeURIComponent(data[name]),
+    );
+  }
 
- */
+  urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
 
-/*
+  // Define what happens on successful data submission
+  xhr.addEventListener('load', function(event) {
+    console.log(this.responseText);
+  });
 
-function SendRequest() {
-  var request = new XMLHttpRequest();
-  // POST to httpbin which returns the POST data as JSON
-  request.open('POST', 'https://ta.yrdsb.ca/live/index.php', false);
+  xhr.open('POST', 'https://ta.yrdsb.ca/live/index.php', false);
+  xhr.send(urlEncodedData);
 
-  var formData = new FormData();
-  formData.append('subject_id', '0');
-  formData.append('username', '335525291');
-  formData.append('password', '6rx8836f');
-  formData.append('submit', 'Login');
+  console.log(urlEncodedData);
+}
 
-  console.log(formData);
-
-  request.send(formData);
-  console.log(request.response);
-
-};
-
-SendRequest();
-*/
-function testy() {
-  var request = new XMLHttpRequest();
-  // POST to httpbin which returns the POST data as JSON
-  request.open('POST', 'https://httpbin.org/post', /* async = */ false);
-
-  var formData = new FormData();
-  formData.append('key1', 'value1');
-  formData.append('key2', 'value2');
-
-  request.send(formData);
-  console.log(request.response);
-};
-
-testy();
+sendRequest({
+  subject_id: '0',
+  username: '335525291',
+  password: '6rx8836f',
+  submit: 'Login',
+});
