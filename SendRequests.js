@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const {URLSearchParams} = require('url');
 
 async function getSessionToken(username, password) {
-  const params = new URLSearchParams();
+  const params = new URLSearchParams(); //like FormData but for fetch
   params.append('subject_id', '0');
   params.append('username', username);
   params.append('password', password);
