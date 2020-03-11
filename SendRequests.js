@@ -1,37 +1,25 @@
-var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+const fetch = require('node-fetch');
+const {URLSearchParams} = require('url');
 
-function sendRequest(data) {
-  console.log('sending request');
+async function getSessionToken(username, password) {
+  const params = new URLSearchParams();
+  params.append('subject_id', '0');
+  params.append('username', username);
+  params.append('password', password);
+  params.append('submit', 'Login');
 
-  const xhr = new XMLHttpRequest();
-
-  let urlEncodedData = '',
-    urlEncodedDataPairs = [],
-    name;
-
-  // Turn the data object into an array of URL-encoded key/value pairs.
-  for (name in data) {
-    urlEncodedDataPairs.push(
-      encodeURIComponent(name) + '=' + encodeURIComponent(data[name]),
-    );
-  }
-
-  urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
-
-  // Define what happens on successful data submission
-  xhr.addEventListener('load', function(event) {
-    console.log(this.responseText);
+  const response = await fetch('https://ta.yrdsb.ca/live/index.php', {
+    method: 'POST',
+    redirect: 'manual', // manual, *follow, error
+    body: params,
   });
 
-  xhr.open('POST', 'https://ta.yrdsb.ca/live/index.php', false);
-  xhr.send(urlEncodedData);
-
-  console.log(urlEncodedData);
+  let sessionToken = response.headers
+    .get('set-cookie')
+    .split('session_token=')[2]
+    .split(';')[0];
+  console.log(sessionToken);
+  return sessionToken;
 }
 
-sendRequest({
-  subject_id: '0',
-  username: '335525291',
-  password: '6rx8836f',
-  submit: 'Login',
-});
+getSessionToken('335525291', '6rx8836f');
