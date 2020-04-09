@@ -4,7 +4,6 @@ const sendHtmlPostRequest = require('./SendRequests.js');
 
 export default class ParseTA {
   async getSessionToken(username, password) {
-    console.log('here');
     let params = {
       subject_id: '0',
       username: username,
