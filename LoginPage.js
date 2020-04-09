@@ -4,6 +4,7 @@ import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
 import {Icon} from 'react-native-elements';
 import {styles, Theme, elements} from './Styles';
 import talogo from './assets/images/talogo.png';
+import ParseTA from './ParseTA';
 
 export default class LoginPage extends Component {
   constructor(props) {
@@ -49,6 +50,7 @@ export default class LoginPage extends Component {
                   width: 250,
                   height: 35,
                   paddingLeft: 10,
+                  paddingTop: 5,
                   marginLeft: 10,
                   marginRight: 25,
                   backgroundColor: Theme.mid(),
@@ -66,9 +68,9 @@ export default class LoginPage extends Component {
               alignItems: 'center',
               marginTop: 15,
             }}>
-            {/* password */}
+            {/* password icon*/}
             <Icon name="lock-outline" color={Theme.light()} />
-            {/* password icon */}
+            {/* password */}
             <TextInput
               style={[
                 elements.button,
@@ -76,6 +78,7 @@ export default class LoginPage extends Component {
                   width: 250,
                   height: 35,
                   paddingLeft: 10,
+                    paddingTop:5,
                   marginLeft: 10,
                   marginRight: 25,
                   backgroundColor: Theme.mid(),
@@ -131,9 +134,12 @@ export default class LoginPage extends Component {
             },
           ]}
           activeOpacity={0.25}
-          onPress={() => {
+          onPress={async () => {
             console.log(this.state.username);
             console.log(this.state.password);
+            let ta = new ParseTA();
+            let sessionToken = await ta.getSessionToken(this.state.username, this.state.password);
+            console.log(sessionToken);
           }}>
           {/* login button */}
           <Text

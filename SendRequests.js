@@ -1,25 +1,23 @@
-const fetch = require('node-fetch');
-const {URLSearchParams} = require('url');
+//const fetch = require('node-fetch');
+//const {URLSearchParams} = require('url');
+//const FormData = require('form-data');
+import fetch from 'node-fetch';
+import FormData from 'form-data';
 
-async function getSessionToken(username, password) {
-  const params = new URLSearchParams();
-  params.append('subject_id', '0');
-  params.append('username', username);
-  params.append('password', password);
-  params.append('submit', 'Login');
+async function sendHtmlPostRequest(url, params) {
+  const formParams = new FormData();
 
-  const response = await fetch('https://ta.yrdsb.ca/live/index.php', {
+  for (let param in params) {
+    formParams.append(param, params[param]);
+  }
+
+  const response = await fetch(url, {
     method: 'POST',
-    redirect: 'manual', // manual, *follow, error
-    body: params,
+    redirect: 'error', // manual, *follow, error
+    body: formParams,
   });
 
-  let sessionToken = response.headers
-    .get('set-cookie')
-    .split('session_token=')[2]
-    .split(';')[0];
-  console.log(sessionToken);
-  return sessionToken;
-}
 
-getSessionToken('335525291', '6rx8836f');
+  return response;
+}
+module.exports = sendHtmlPostRequest;
