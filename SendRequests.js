@@ -1,8 +1,9 @@
-const fetch = require('node-fetch');
-const {URLSearchParams} = require('url');
+import fetch from 'node-fetch';
 
-async function getSessionToken(username, password) {
-  const params = new URLSearchParams(); //like FormData but for fetch
+export async function getSessionToken(username, password) {
+  console.log("heyyy");
+
+  const params = new FormData(); //like FormData but for fetch
   params.append('subject_id', '0');
   params.append('username', username);
   params.append('password', password);
@@ -13,7 +14,7 @@ async function getSessionToken(username, password) {
     redirect: 'manual', // manual, *follow, error
     body: params,
   });
-
+  console.log(response.headers.get('set_cookie'));
   let sessionToken = response.headers
     .get('set-cookie')
     .split('session_token=')[2]
@@ -22,4 +23,4 @@ async function getSessionToken(username, password) {
   return sessionToken;
 }
 
-getSessionToken('335525291', '6rx8836f');
+//getSessionToken('335525291', '6rx8836f');

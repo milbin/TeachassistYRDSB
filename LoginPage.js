@@ -2,15 +2,17 @@ import 'react-native-gesture-handler';
 import React, {Component} from 'react';
 import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
 import {Icon} from 'react-native-elements';
+import AsyncStorage from '@react-native-community/async-storage';
 import {styles, Theme, elements} from './Styles';
 import talogo from './assets/images/talogo.png';
+import {getSessionToken} from './SendRequests';
 
 export default class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.navigation = props.navigation;
     this.state = {
-      rememberMe: {value: false, checkBox: 'check-box-outline-blank'},
+      rememberMe: {value: true, checkBox: 'check-box'},
       username: '',
       password: '',
     };
@@ -100,13 +102,16 @@ export default class LoginPage extends Component {
               if (this.state.rememberMe.value) {
                 this.setState({
                   rememberMe: {
-                    value: false,
-                    checkBox: 'check-box-outline-blank',
+                    value: true,
+                    checkBox: 'check-box',
                   },
                 });
               } else {
                 this.setState({
-                  rememberMe: {value: true, checkBox: 'check-box'},
+                  rememberMe: {
+                    value: false,
+                    checkBox: 'check-box-outline-blank',
+                  },
                 });
               }
             }}>
@@ -114,7 +119,7 @@ export default class LoginPage extends Component {
             <Icon name={this.state.rememberMe.checkBox} color={Theme.punk()} />
             <Text style={[styles.subheading2, {paddingLeft: 5}]}>
               {/* remember me text */}
-              Remember me
+              Remember Me
             </Text>
           </TouchableOpacity>
         </View>
@@ -134,6 +139,17 @@ export default class LoginPage extends Component {
           onPress={() => {
             console.log(this.state.username);
             console.log(this.state.password);
+            //getSessionToken(this.state.username, this.state.password);
+            console.log('pressed login');
+            AsyncStorage.setItem('username', this.state.username);
+            if (this.state.rememberMe) {
+              AsyncStorage.setItem('password', this.state.password);
+            }
+            AsyncStorage.setItem(
+              'rememberMe',
+              JSON.stringify(this.state.rememberMe.value),
+            );
+            this.navigation.replace('MainPage');
           }}>
           {/* login button */}
           <Text
