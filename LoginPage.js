@@ -5,7 +5,7 @@ import {Icon} from 'react-native-elements';
 import AsyncStorage from '@react-native-community/async-storage';
 import {styles, Theme, elements} from './Styles';
 import talogo from './assets/images/talogo.png';
-import {getSessionToken} from './SendRequests';
+import ParseTA from './ParseTA';
 
 export default class LoginPage extends Component {
   constructor(props) {
@@ -68,9 +68,9 @@ export default class LoginPage extends Component {
               alignItems: 'center',
               marginTop: 15,
             }}>
-            {/* password */}
+            {/* password icon*/}
             <Icon name="lock-outline" color={Theme.light()} />
-            {/* password icon */}
+            {/* password */}
             <TextInput
               style={[
                 elements.button,
@@ -136,15 +136,18 @@ export default class LoginPage extends Component {
             },
           ]}
           activeOpacity={0.25}
-          onPress={() => {
+          onPress={async () => {
             console.log(this.state.username);
             console.log(this.state.password);
-            //getSessionToken(this.state.username, this.state.password);
             console.log('pressed login');
+            let ta = new ParseTA();
+            let sessionToken = await ta.getSessionToken(
+              this.state.username,
+              this.state.password,
+            );
+            console.log(sessionToken);
             AsyncStorage.setItem('username', this.state.username);
-            if (this.state.rememberMe) {
-              AsyncStorage.setItem('password', this.state.password);
-            }
+            AsyncStorage.setItem('password', this.state.password);
             AsyncStorage.setItem(
               'rememberMe',
               JSON.stringify(this.state.rememberMe.value),
