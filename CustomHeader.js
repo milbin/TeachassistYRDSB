@@ -27,13 +27,34 @@ export default class CustomHeader extends Component {
     return (
       <View
         style={{
-          flex: 1,
           flexDirection: 'row',
           alignItems: 'center',
-          justifyContent: 'space-around',
+          justifyContent: 'space-around', // for some reason this doesn't work
         }}>
-        <Icon name="menu" color={Theme.light()} />
-        <Text style={styles.subtitle}>Student: {this.state.username}</Text>
+        <View style={{flex: 1}}>
+          <Icon
+            style={{flex: 1}}
+            name="menu"
+            color={Theme.light()}
+            onPress={console.log('menu button pressed')} // this is triggered when the view loads? and doesn't when pressed?
+          />
+        </View>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+          }}>
+          <Text style={[styles.subtitle]}>Student: {this.state.username}</Text>
+        </View>
+        <View style={{flex: 1}}>
+          <Icon
+            style={{flex: 1}}
+            name="pencil-outline"
+            type="material-community"
+            color={Theme.light()}
+            onPress={console.log('edit button pressed')} // this is triggered when the view loads? and doesn't when pressed?
+          />
+        </View>
       </View>
     );
   }
