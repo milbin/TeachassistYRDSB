@@ -31,7 +31,7 @@ export default class LoginPage extends Component {
           {/* logo and title */}
           <Image style={{width: 100, height: 100}} source={talogo} />
           {/* logo */}
-          <Text style={styles.title}>Teachassist</Text>
+          <Text style={styles.appName}>Teachassist</Text>
           {/* title */}
         </View>
         <View style={{marginTop: 120}}>
@@ -117,7 +117,7 @@ export default class LoginPage extends Component {
             }}>
             {/* remember me */}
             <Icon name={this.state.rememberMe.checkBox} color={Theme.punk()} />
-            <Text style={[styles.subheading2, {paddingLeft: 5}]}>
+            <Text style={[styles.subheading3, {paddingLeft: 5}]}>
               {/* remember me text */}
               Remember Me
             </Text>
@@ -156,7 +156,7 @@ export default class LoginPage extends Component {
           }}>
           {/* login button */}
           <Text
-            style={[styles.subheading1, {fontSize: 25, color: Theme.dark()}]}>
+            style={[styles.title, {color: Theme.dark()}]}>
             {/* login text */}
             Login
           </Text>

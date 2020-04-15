@@ -4,7 +4,7 @@ import {Icon} from 'react-native-elements';
 import AsyncStorage from '@react-native-community/async-storage';
 import {styles, Theme} from './Styles';
 
-export default class CustomHeader extends Component {
+export default class PageHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {username: ''};

@@ -2,7 +2,6 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import createStackNavigator from '@react-navigation/stack/src/navigators/createStackNavigator';
-import CustomHeader from './CustomHeader';
 import LoginPage from './LoginPage';
 import MainPage from './MainPage';
 
@@ -20,7 +19,7 @@ export default function App() {
         <Stack.Screen
           name="MainPage"
           component={MainPage}
-          options={{headerTitle: props => <CustomHeader />}}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>

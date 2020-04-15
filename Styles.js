@@ -53,30 +53,42 @@ export class Theme {
 }
 
 export const styles = StyleSheet.create({
-  title: {
+  appName: {
     fontFamily: 'Eczar-Bold',
     fontSize: 20,
-    color: Theme.light(),
+    color: Theme.light(), //in use (login page)
+  },
+  title: {
+    fontFamily: 'Gilroy-Bold',
+    fontSize: 25,
+    color: Theme.light(), //in use (login button, overall average)
   },
   subtitle: {
-    fontFamily: 'Gilroy-Bold',
-    fontSize: 17,
-    color: Theme.light(),
+    fontFamily: 'Gilroy-ExtraBold',
+    fontSize: 20,
+    letterSpacing: 1,
+    color: Theme.light(), //in use (period number)
   },
   heading: {
+    fontFamily: 'Gilroy-Bold',
+    fontSize: 17,
+    color: Theme.light(), //in use (student number in heading)
+  },
+  subheading1: {
     fontFamily: 'Gilroy-Regular',
     fontSize: 16,
     color: Theme.light(),
   },
-  subheading1: {
+  subheading2: {
     fontFamily: 'Gilroy-Bold',
     fontSize: 14,
-    color: Theme.light(),
+    color: Theme.light(), //in use (remember me)
   },
-  subheading2: {
+  subheading3: {
     fontFamily: 'Gilroy-Regular',
     fontSize: 14,
-    color: Theme.light(),
+    letterSpacing: 1,
+    color: Theme.light(), //in use (course name in card)
   },
   body: {
     fontFamily: 'Gilroy-Regular',
