@@ -102,4 +102,12 @@ export const elements = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 0,
   },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    height: 55,
+    borderBottomColor: Theme.mid(),
+    borderBottomWidth: 2,
+  },
 });

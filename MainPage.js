@@ -10,7 +10,10 @@ export default class MainPage extends Component {
   constructor(props) {
     super(props);
     this.navigation = props.navigation;
-    this.state = {username: ''};
+    this.state = {
+      username: '',
+      editing: {value: false, icon: 'pencil-outline'},
+    };
     this.getData();
   }
 
@@ -30,35 +33,50 @@ export default class MainPage extends Component {
     return (
       <View>
         {/* main page */}
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            height: 55,
-            borderBottomColor: Theme.mid(),
-            borderBottomWidth: 2,
-          }}>
+        <View style={[elements.header]}>
           {/* header */}
-          {/*            would need to make this into a separate file and import then adjust */}
-          <Icon
-            style={{marginLeft: 10}} //margin isn't working?
-            name="menu"
-            color={Theme.light()}
-            onPress={console.log('menu button pressed')} // this is triggered when the view loads? and doesn't when pressed?
-          />
-          {/* menu button */}
+          <TouchableOpacity
+            style={{marginLeft: 10}}
+            activeOpacity={1}
+            onPress={async () => {
+              console.log('menu button pressed');
+            }} //TODO animate, link to nav menu
+          >
+            {/* menu button view */}
+            <Icon name="menu" color={Theme.light()} />
+            {/* menu button */}
+          </TouchableOpacity>
           <Text style={[styles.heading]}>Student: {this.state.username}</Text>
-          {/*        username isn't showing cause getData is async and doesn't finish fast enough */}
+          {/* TODO username isn't showing cause getData is async and doesn't finish fast enough */}
           {/* username text */}
-          <Icon
-            style={{marginRight: 10}} //margin isn't working?
-            name="pencil-outline"
-            type="material-community"
-            color={Theme.light()}
-            onPress={console.log('edit button pressed')} // this is triggered when the view loads? and doesn't when pressed?
-          />
-          {/* edit button */}
+          <TouchableOpacity
+            style={{marginRight: 10}}
+            onPress={() => {
+              console.log('edit button pressed');
+              if (this.state.editing.value) {
+                this.setState({
+                  editing: {
+                    value: false,
+                    icon: 'pencil-outline',
+                  },
+                });
+              } else {
+                this.setState({
+                  editing: {
+                    value: true,
+                    icon: 'pencil-off-outline',
+                  },
+                });
+              }
+            }}>
+            {/* edit button */}
+            <Icon
+              name={this.state.editing.icon}
+              type="material-community"
+              color={Theme.light()}
+            />
+            {/* edit button icon */}
+          </TouchableOpacity>
         </View>
         <View
           style={{
@@ -71,14 +89,14 @@ export default class MainPage extends Component {
             <AnimatedCircularProgress
               size={170}
               width={5}
-              fill={92.3} // this would need to be connected to smth obviously: https://github.com/bartgryszko/react-native-circular-progress
+              fill={92.3} // TODO this would need to be connected to smth obviously: https://github.com/bartgryszko/react-native-circular-progress
               rotation={0}
               lineCap="round"
               tintColor={Theme.punk()}
               backgroundColor={Theme.mid()}>
               {fill => <Text style={styles.title}>92.3%</Text>}
               {/* average text */}
-              {/*                   again, needing to be connected */}
+              {/* TODO again, needing to be connected */}
             </AnimatedCircularProgress>
             {/* progress circle */}
           </View>
@@ -107,7 +125,8 @@ export default class MainPage extends Component {
                 console.log('course pressed');
               }}>
               {/* course card */}
-              {/*               this is just the template, not sure how it's supposed to be setup */}
+              {/* TODO this is just the template, not sure how it's supposed to be setup */}
+              {/* TODO add delete course options with popup that explains */}
               <View
                 style={{
                   flexDirection: 'column',
@@ -121,7 +140,7 @@ export default class MainPage extends Component {
                   Period 1
                   <Text style={[styles.body, {color: Theme.light()}]}>
                     {/* room number */}
-                    {/*   need a small start margin and for some reason it inherited the fontfamily of the parent text (bold) */}
+                    {/* FIXME need a small start margin and for some reason it inherited the fontfamily of the parent text (bold) */}
                     — Rm 141
                   </Text>
                 </Text>

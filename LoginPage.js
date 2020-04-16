@@ -12,7 +12,7 @@ export default class LoginPage extends Component {
     super(props);
     this.navigation = props.navigation;
     this.state = {
-      rememberMe: {value: true, checkBox: 'check-box'},
+      rememberMe: {value: true, icon: 'check-box'},
       username: '',
       password: '',
     };
@@ -102,21 +102,22 @@ export default class LoginPage extends Component {
               if (this.state.rememberMe.value) {
                 this.setState({
                   rememberMe: {
-                    value: true,
-                    checkBox: 'check-box',
+                    value: false,
+                    icon: 'check-box-outline-blank',
                   },
                 });
               } else {
                 this.setState({
                   rememberMe: {
-                    value: false,
-                    checkBox: 'check-box-outline-blank',
+                    value: true,
+                    icon: 'check-box',
                   },
                 });
               }
             }}>
             {/* remember me */}
-            <Icon name={this.state.rememberMe.checkBox} color={Theme.punk()} />
+            <Icon name={this.state.rememberMe.icon} color={Theme.punk()} />
+            {/* remember me icon */}
             <Text style={[styles.subheading3, {paddingLeft: 5}]}>
               {/* remember me text */}
               Remember Me
@@ -140,12 +141,12 @@ export default class LoginPage extends Component {
             console.log(this.state.username);
             console.log(this.state.password);
             console.log('pressed login');
-            let ta = new ParseTA();
-            let sessionToken = await ta.getSessionToken(
-              this.state.username,
-              this.state.password,
-            );
-            console.log(sessionToken);
+            //let ta = new ParseTA();
+            //let sessionToken = await ta.getSessionToken(
+            //this.state.username,
+            //this.state.password,
+            //);
+            //console.log(sessionToken);
             AsyncStorage.setItem('username', this.state.username);
             AsyncStorage.setItem('password', this.state.password);
             AsyncStorage.setItem(
@@ -155,8 +156,7 @@ export default class LoginPage extends Component {
             this.navigation.replace('MainPage');
           }}>
           {/* login button */}
-          <Text
-            style={[styles.title, {color: Theme.dark()}]}>
+          <Text style={[styles.title, {color: Theme.dark()}]}>
             {/* login text */}
             Login
           </Text>
