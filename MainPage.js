@@ -40,6 +40,7 @@ export default class MainPage extends Component {
             activeOpacity={1}
             onPress={async () => {
               console.log('menu button pressed');
+              this.navigation.replace('DrawerNavigator');
             }} //TODO animate, link to nav menu
           >
             {/* menu button view */}
