@@ -5,6 +5,7 @@ import createStackNavigator from '@react-navigation/stack/src/navigators/createS
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import LoginPage from './LoginPage';
 import MainPage from './MainPage';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -30,38 +31,60 @@ export default function App() {
 }
 */
 
-///*
-function StackNavigator() {
-  return (
-    <NavigationContainer>
+/*
+
+async function Home() {
+  try {
+    const value = await AsyncStorage.getItem('signedIn');
+    if (value !== null) {
+      return (
+        <Stack.Navigator>
+          <Stack.Screen
+            name="MainPage"
+            component={MainPage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
+        </Stack.Navigator>
+      );
+    } else {
+      return (
+        <Stack.Navigator>
+          <Stack.Screen
+            name="LoginPage"
+            component={LoginPage}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      );
+    }
+  } catch (e) {
+    return (
       <Stack.Navigator>
         <Stack.Screen
           name="LoginPage"
           component={LoginPage}
           options={{headerShown: false}}
         />
-        <Stack.Screen
-          name="MainPage"
-          component={MainPage}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
       </Stack.Navigator>
+    );
+  }
+}
+
+console.log(Home());
+
+function DrawerNavigator() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={Home()} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
 
-function DrawerNavigator() {
-  return (
-    <Drawer.Navigator initialRouteName="MainPage">
-      <Drawer.Screen name="Un" component={MainPage} />
-      <Drawer.Screen name="hjf" component={LoginPage} />
-    </Drawer.Navigator>
-  );
-}
-
 export default function App() {
-  return <StackNavigator />;
+  return <DrawerNavigator />;
 }
 
-//*/
+ */

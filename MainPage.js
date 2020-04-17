@@ -5,6 +5,7 @@ import {Icon} from 'react-native-elements';
 import AsyncStorage from '@react-native-community/async-storage';
 import {styles, Theme, elements} from './Styles';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
+import LoginPage from './LoginPage';
 
 export default class MainPage extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ export default class MainPage extends Component {
         this.state.username = value;
       }
     } catch (e) {
-      // error reading value
+      this.navigation.replace(LoginPage);
     }
     console.log(this.state.username);
   }
@@ -40,8 +41,8 @@ export default class MainPage extends Component {
             activeOpacity={1}
             onPress={async () => {
               console.log('menu button pressed');
-              this.navigation.replace('DrawerNavigator');
-            }} //TODO animate, link to nav menu
+              this.navigation.openDrawer();
+            }} //TODO animate icon
           >
             {/* menu button view */}
             <Icon name="menu" color={Theme.light()} />

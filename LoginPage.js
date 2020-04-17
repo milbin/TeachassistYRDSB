@@ -12,10 +12,12 @@ export default class LoginPage extends Component {
     super(props);
     this.navigation = props.navigation;
     this.state = {
-      rememberMe: {value: true, icon: 'check-box'},
       username: '',
       password: '',
+      rememberMe: {value: true, icon: 'check-box'},
+      signedIn: false,
     };
+    AsyncStorage.setItem('signedIn', JSON.stringify(this.state.signedIn));
   }
 
   render() {
@@ -139,7 +141,7 @@ export default class LoginPage extends Component {
           activeOpacity={0.25}
           onPress={async () => {
             console.log(this.state.username);
-            console.log(this.state.password);
+            console.log(this.state.password); //TODO take these out and uncomment below
             console.log('pressed login');
             //let ta = new ParseTA();
             //let sessionToken = await ta.getSessionToken(
@@ -147,13 +149,15 @@ export default class LoginPage extends Component {
             //this.state.password,
             //);
             //console.log(sessionToken);
+            //TODO put below in a if statement for if session cookie received... else popup
             AsyncStorage.setItem('username', this.state.username);
             AsyncStorage.setItem('password', this.state.password);
             AsyncStorage.setItem(
               'rememberMe',
               JSON.stringify(this.state.rememberMe.value),
             );
-            this.navigation.replace('MainPage');
+            AsyncStorage.setItem('signedIn', JSON.stringify(true));
+            this.navigation.replace('MainPage'); //FIXME take out this line once authwall is working
           }}>
           {/* login button */}
           <Text style={[styles.title, {color: Theme.dark()}]}>
