@@ -6,6 +6,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {styles, Theme, elements} from './Styles';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import LoginPage from './LoginPage';
+import DBHelper from "./DBHelper";
 
 export default class MainPage extends Component {
   constructor(props) {
@@ -19,15 +20,7 @@ export default class MainPage extends Component {
   }
 
   async getData() {
-    try {
-      const value = await AsyncStorage.getItem('username');
-      if (value !== null) {
-        this.state.username = value;
-      }
-    } catch (e) {
-      this.navigation.replace(LoginPage);
-    }
-    console.log(this.state.username);
+    this.state.username = DBHelper.getUserSettings()['username']
   }
 
   render() {

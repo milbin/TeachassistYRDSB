@@ -6,6 +6,8 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {styles, Theme, elements} from './Styles';
 import talogo from './assets/images/talogo.png';
 import ParseTA from './ParseTA';
+import DBHelper from './DBHelper';
+import MainPage from './MainPage';
 
 export default class LoginPage extends Component {
   constructor(props) {
@@ -143,6 +145,11 @@ export default class LoginPage extends Component {
             console.log(this.state.username);
             console.log(this.state.password); //TODO take these out and uncomment below
             console.log('pressed login');
+            DBHelper.setupUserSettings(
+              this.state.username,
+              this.state.password,
+            );
+            DBHelper.getUserSettings();
             //let ta = new ParseTA();
             //let sessionToken = await ta.getSessionToken(
             //this.state.username,
@@ -150,13 +157,6 @@ export default class LoginPage extends Component {
             //);
             //console.log(sessionToken);
             //TODO put below in a if statement for if session cookie received... else popup
-            AsyncStorage.setItem('username', this.state.username);
-            AsyncStorage.setItem('password', this.state.password);
-            AsyncStorage.setItem(
-              'rememberMe',
-              JSON.stringify(this.state.rememberMe.value),
-            );
-            AsyncStorage.setItem('signedIn', JSON.stringify(true));
             this.navigation.replace('MainPage'); //FIXME take out this line once authwall is working
           }}>
           {/* login button */}
