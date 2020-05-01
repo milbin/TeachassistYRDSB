@@ -19,8 +19,8 @@ export default class MainPage extends Component {
     this.getData();
   }
 
-  async getData() {
-    this.state.username = DBHelper.getUserSettings()['username']
+  getData() {
+    this.state.username = DBHelper.getUserSettings()['username'];
   }
 
   render() {

@@ -10,13 +10,17 @@ const SettingsSchema = {
 };
 
 export default class DBHelper {
-  static setupUserSettings(username, password) {
+  static setupUserSettings(username, password, rememberMe) {
     const realm = new Realm({schema: [SettingsSchema]});
 
     realm.write(() => {
       let currentSettings = realm.objects('userSettings');
       realm.delete(currentSettings);
-      realm.create('userSettings', {username: username, password: password});
+      realm.create('userSettings', {
+        username: username,
+        password: password,
+        rememberMe: rememberMe,
+      });
     });
     // Remember to close the realm when finished.
     realm.close();
@@ -32,6 +36,6 @@ export default class DBHelper {
 
     // Remember to close the realm when finished.
     realm.close();
-      
+
   }
 }

@@ -38,6 +38,8 @@ target 'TeachassistYRDSB' do
 
   pod 'react-native-cookies', :path => '../node_modules/react-native-cookies'
 
+  pod 'RealmJS', :path => '../node_modules/realm'
+
   target 'TeachassistYRDSBTests' do
     inherit! :search_paths
     # Pods for testing
