@@ -1,3 +1,5 @@
+//  Copyright © 2020 Benjamin Tran and Sarah Tran. All rights reserved.
+
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 

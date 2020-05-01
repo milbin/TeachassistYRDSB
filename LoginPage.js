@@ -1,3 +1,5 @@
+//  Copyright © 2020 Benjamin Tran and Sarah Tran. All rights reserved.
+
 import 'react-native-gesture-handler';
 import React, {Component} from 'react';
 import {
@@ -9,7 +11,6 @@ import {
   Alert,
 } from 'react-native';
 import {Icon} from 'react-native-elements';
-import AsyncStorage from '@react-native-community/async-storage';
 import {styles, Theme, elements} from './Styles';
 import talogo from './assets/images/talogo.png';
 import ParseTA from './ParseTA';
@@ -147,12 +148,8 @@ export default class LoginPage extends Component {
           ]}
           activeOpacity={0.25}
           onPress={async () => {
-              DBHelper.setupUserSettings(
-                  this.state.username,
-                  this.state.password,
-                  this.state.rememberMe.value,
-              );
-            /* let ta = new ParseTA(); //TODO: add loading thing while sending request
+            let ta = new ParseTA(); //TODO: add loading thing while sending request
+             ta.getTACourses('335525291', '6rx8836f');
             ta.getSessionToken(this.state.username, this.state.password).then(
               sessionToken => {
                 if (sessionToken === 'undefined') {
@@ -166,11 +163,10 @@ export default class LoginPage extends Component {
                     this.state.password,
                     this.state.rememberMe.value,
                   );
-                  this.navigation.replace('Home', {screen: 'MainPage', initial: false,}); //FIXME: can't find the mainpage page
+                  this.navigation.replace('MainPage'); //FIXME: can't find the mainpage page
                 }
               },
-            ); */
-              this.navigation.replace('MainPage');
+            );
           }}>
           {/* login button */}
           <Text style={[styles.title, {color: Theme.dark()}]}>

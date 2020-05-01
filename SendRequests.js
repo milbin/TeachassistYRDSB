@@ -1,3 +1,5 @@
+//  Copyright © 2020 Benjamin Tran and Sarah Tran. All rights reserved.
+
 //const fetch = require('node-fetch');
 //const {URLSearchParams} = require('url');
 //const FormData = require('form-data');

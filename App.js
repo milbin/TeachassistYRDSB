@@ -1,3 +1,5 @@
+//  Copyright © 2020 Benjamin Tran and Sarah Tran. All rights reserved.
+
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';

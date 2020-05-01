@@ -1,12 +1,14 @@
+//  Copyright © 2020 Benjamin Tran and Sarah Tran. All rights reserved.
+
 import 'react-native-gesture-handler';
 import React, {Component} from 'react';
 import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
 import {Icon} from 'react-native-elements';
-import AsyncStorage from '@react-native-community/async-storage';
 import {styles, Theme, elements} from './Styles';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import LoginPage from './LoginPage';
 import DBHelper from "./DBHelper";
+import ParseTA from './ParseTA';
 
 export default class MainPage extends Component {
   constructor(props) {
@@ -47,7 +49,7 @@ export default class MainPage extends Component {
           <TouchableOpacity
             style={{marginRight: 10}}
             onPress={() => {
-              console.log('edit button pressed');
+                console.log('edit button pressed');
               if (this.state.editing.value) {
                 this.setState({
                   editing: {
