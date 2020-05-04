@@ -45,7 +45,7 @@ export default class ParseTA {
 
     let courseNumber = 0;
     let i;
-    console.log(responseText.split('<td>')); //FIXME: this is printing as an object?
+    console.log(responseText.split('<td>').toString); //FIXME: this is printing as an object? or when .toString used, undefined
     for (i in responseText.split('<td>')) {
       if (
         (i.includes('current mark = ') ||

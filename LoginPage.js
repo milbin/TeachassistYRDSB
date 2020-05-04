@@ -149,7 +149,6 @@ export default class LoginPage extends Component {
           activeOpacity={0.25}
           onPress={async () => {
             let ta = new ParseTA(); //TODO: add loading thing while sending request
-             ta.getTACourses('335525291', '6rx8836f');
             ta.getSessionToken(this.state.username, this.state.password).then(
               sessionToken => {
                 if (sessionToken === 'undefined') {

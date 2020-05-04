@@ -7,7 +7,7 @@ import {Icon} from 'react-native-elements';
 import {styles, Theme, elements} from './Styles';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import LoginPage from './LoginPage';
-import DBHelper from "./DBHelper";
+import DBHelper from './DBHelper';
 import ParseTA from './ParseTA';
 
 export default class MainPage extends Component {
@@ -19,10 +19,13 @@ export default class MainPage extends Component {
       editing: {value: false, icon: 'pencil-outline'},
     };
     this.getData();
+    let ta = new ParseTA();
+    ta.getTACourses(this.state.username, this.state.password);
   }
 
   getData() {
-    this.state.username = DBHelper.getUserSettings()['username'];
+    this.state.username = DBHelper.getUserSettings().username;
+    this.state.password = DBHelper.getUserSettings().password;
   }
 
   render() {
@@ -49,7 +52,7 @@ export default class MainPage extends Component {
           <TouchableOpacity
             style={{marginRight: 10}}
             onPress={() => {
-                console.log('edit button pressed');
+              console.log('edit button pressed');
               if (this.state.editing.value) {
                 this.setState({
                   editing: {
